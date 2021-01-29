@@ -1,9 +1,10 @@
-#include<iostream>
-#include<stack>
+  #include<iostream>
+  #include<stack>
+  #include<vector>
 
-using namespace std;
+  using namespace std;
 
-string highAccMul_single(string a, int b, int pos){
+  string highAccMul_single(string a, int b, int pos){
     stack<char> tmp;
     string res;
     while (pos-- > 0)
@@ -59,7 +60,6 @@ string highAccAdd(string A, string B){
             b.pop();
 
             int numres = ( numa + numb + more) % 10;
-			cout << numres << endl;
             more = ( numa + numb + more ) / 10;
             res.push(numres);
         }
@@ -70,7 +70,6 @@ string highAccAdd(string A, string B){
 
             int numres = ( numb + more) % 10;
             more = ( numb + more) / 10;
-			cout << numres << endl;
             res.push(numres);
         }
         else{
@@ -104,7 +103,6 @@ string highAccMul(string a, string b){
     
     res = mul[0];
     for(int i = 1; i < len; i++){
-		cout << mul[i] << endl;
         res = highAccAdd(res, mul[i]);
     }
 
@@ -112,14 +110,52 @@ string highAccMul(string a, string b){
 }
 
 int main(){
-    string a;
-    string b;
-    string res;
-    cin >> a;
-    cin >> b;
+    int num = 0;
+    cin >> num;
+    if (num==3)
+    {
+        cout << "1 2\n2";
+    }
+    else if(num==4){
+        cout << "1 3\n3";
+    }
+    else{
+        int sum = 0;
+    int init = 2;
+    while (sum < num)
+    {
+        sum += (init++);
+    }
 
-    res = highAccMul(a, b);
-    cout << res;
+    vector<int> res;
+    int dis = sum - num;
+    if (dis == 1){
+        for (int i = 3; i < init; i++){
+            res.push_back(i);
+        }
+    }
+    else{
+        for (int i = 2; i < init; i++)
+        {
+            if (i != dis) res.push_back(i);
+        }
+    }
+    for(int i = 0; i < res.size(); i++){
+        if(i == 0) cout << res[i];
+        else cout << " " << res[i];
+    }
+    cout << "\n";
+
+    string s = string(to_string(res[0]));
+    for(int i = 1; i < res.size(); i++){
+		cout << s << endl;
+		cout << string(to_string(res[i])) << endl;
+        s = highAccMul(s, string(to_string(res[i])));
+    }
+
+    cout << s;
+    }
+    
 
     return 0;
 }
