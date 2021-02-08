@@ -1,7 +1,5 @@
 #include<cstdio>
 
-using namespace std;
-
 int main(){
     int n;
     int dp[2] = {1, 2};
@@ -15,5 +13,5 @@ int main(){
         dp[0] = dp[1];
         dp[1] = newdp;
     }
-    printf("%d", dp[n >= 3 ? 2 : n]);
+    printf("%d", dp[n>=3?1:n-1]);
 }

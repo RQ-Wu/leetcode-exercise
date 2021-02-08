@@ -34,9 +34,10 @@ string highAccAdd(string a, string b){
 }
 
 int main(){
-    int n;
+    int M,N;
     string step[3] = {"1","2","3"};
-    scanf("%d", &n);
+    scanf("%d %d", &M, &N);
+    int n = N - M;
     if(n == 0 || n == 1 || n == 2) printf("%d", n);
     else{
         for(int i = 3; i < n; i++){
