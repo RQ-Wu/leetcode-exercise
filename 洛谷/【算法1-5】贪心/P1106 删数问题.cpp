@@ -12,23 +12,7 @@ string cmpString(string s1, string s2){
     return s1;
     
 }
-string select(string s, int n){
-    string res;
-    if (n == 1){
-        char min = '9';
-        for (int i = 0; i < s.size(); i++){
-            if(s[i] < min) min = s[i];
-        }
-        res.push_back(min);
-        return res;
-    }
-    else if(n == s.size()) return s;
-    else{
-        string s1 = select(s.substr(0, s.size() - 1), n-1) + s[s.size() - 1];
-        string s2 = select(s.substr(0, s.size() - 1), n);
-        return cmpString(s1, s2);
-    }
-}
+
 int main(){
     string s;
     string res[255][255];
