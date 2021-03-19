@@ -9,6 +9,7 @@
         "utility": "cpp",
         "valarray": "cpp",
         "string": "cpp",
-        "cstdio": "cpp"
+        "cstdio": "cpp",
+        "vector": "cpp"
     }
 }
