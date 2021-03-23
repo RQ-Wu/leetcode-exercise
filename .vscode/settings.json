@@ -10,6 +10,7 @@
         "valarray": "cpp",
         "string": "cpp",
         "cstdio": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "xstring": "cpp"
     }
 }
