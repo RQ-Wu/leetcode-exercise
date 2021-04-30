@@ -16,7 +16,7 @@ string highAccAdd(string a, string b){
     }    
     else{
         for(int i = lenB; i < lenA; i++){
-            b = "0" + a;
+            b = "0" + b;
         }
     }
 

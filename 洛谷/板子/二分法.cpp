@@ -16,3 +16,27 @@ int halfFind(int a[], int left, int right, int target){
 	}
     return res;
 }
+
+//寻找下界
+int halfFind(int a[], int left, int right, int target){
+    while(left <= right){
+        int mid = left + right >> 1;
+        if (a[mid] <= target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return right; 
+    // a[right] == target 就是找到了
+    // a[right] == target 就是不存在 
+}
+
+//寻找上界
+int halfFind(int a[], int left, int right, int target){
+    while(left < right){
+        int mid = left + right >> 1;
+        if (a[mid] < left) left = mid + 1;
+        else right = mid;
+    }
+    return left;
+    // a[left] == target 就是找到了
+    // a[left] != target 就是不存在
+}

@@ -11,6 +11,8 @@
         "string": "cpp",
         "cstdio": "cpp",
         "vector": "cpp",
-        "xstring": "cpp"
+        "xstring": "cpp",
+        "queue": "cpp",
+        "ostream": "cpp"
     }
 }
